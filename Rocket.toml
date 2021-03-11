@@ -1,11 +1,11 @@
-[default]
+[global]
 address = "0.0.0.0"
 limits = { forms = "64 kB", json = "1 MiB" }
 
 ## set only when compiled in debug mode, i.e, `cargo build`
-[debug]
+[development]
 port = 3000
 
 ## set only when compiled in release mode, i.e, `cargo build --release`
 ## don't use this secret_key! generate your own and keep it private!
-[release]
+[production]
