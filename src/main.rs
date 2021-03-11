@@ -19,7 +19,7 @@ type Schema = RootNode<'static, Query, EmptyMutation<Database>, EmptySubscriptio
 
 #[rocket::get("/")]
 fn graphiql() -> content::Html<String> {
-    juniper_rocket_async::graphiql_source("/graphql", None)
+    juniper_rocket::graphiql_source("/graphql", None)
 }
 
 #[rocket::get("/graphql?<request>")]
@@ -27,7 +27,7 @@ fn get_graphql_handler(
     context: State<Database>,
     request: juniper_rocket::GraphQLRequest,
     schema: State<Schema>,
-) -> juniper_rocket_async::GraphQLResponse {
+) -> juniper_rocket::GraphQLResponse {
     request.execute_sync(&schema, &context)
 }
 
@@ -36,14 +36,12 @@ fn post_graphql_handler(
     context: State<Database>,
     request: juniper_rocket::GraphQLRequest,
     schema: State<Schema>,
-) -> juniper_rocket_async::GraphQLResponse {
+) -> juniper_rocket::GraphQLResponse {
     request.execute_sync(&schema, &context)
 }
 
 
-#[rocket::main]
-
-async fn main() {
+fn main() {
     // let hs = HumanSchema::new(Query, Mutation, juniper::EmptySubscription::new());
 
     // let context = schemas::humans::Context::new(database::DatabasePool{});
@@ -63,8 +61,6 @@ async fn main() {
             "/",
             rocket::routes![graphiql, get_graphql_handler, post_graphql_handler],
         )
-        .launch()
-        .await
-        .expect("server to launch");
+        .launch();
 }
 

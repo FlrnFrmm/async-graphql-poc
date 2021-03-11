@@ -9,10 +9,7 @@ edition = "2018"
 [dependencies]
 rocket = { version = "0.4.2" }
 juniper = { git = "https://github.com/graphql-rust/juniper" }
-juniper_rocket_async = { git = "https://github.com/graphql-rust/juniper" }
-
-tokio = { version = "1.3", features = ["macros"] }
-futures = "0.3.1"
+juniper_rocket = { git = "https://github.com/graphql-rust/juniper" }
 
 
 [dev-dependencies]
