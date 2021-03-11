@@ -1,0 +1,58 @@
+<svg host="65bd71144e" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="602px" height="611px" viewBox="-0.5 -0.5 602 611" content="&lt;mxfile&gt;&lt;diagram id=&quot;NbcyL1aSpoRZkwYzc6jT&quot; name=&quot;Page-1&quot;&gt;1VZNc5swEP01HDsDyGGaY+I67SGdaceHnlXYAK1gGbEY019fgSS+ZDvJOM1MuRg9vV1pd9+u8di2OH6WvMq+YgLCC/3k6LFPXhgGQeCrnx7pNBL5t8GNhlKZJ4Y2Afv8DxjQWKZNnkC9IBKioLxagjGWJcS0wLiU2C5pTyiWp1Y8BQfYx1y46I88oUyjG189084XyNOMbIjj1k8e/04lNqU50gvZ0/Do7YJbd4ZfZzzBdgaxnce2EpH0W3HcgugTbDOn7R7O7I5Xl1DSSww22uDARQP2xsO9qLPpgERlxyxRUoYpllzsJvR+iBd6j75aTZxHxEqBgQJ/AVFnSs0bQgVlVAizq8/sDzobhoFqbGRsWMxog8sUDCscU6j0CVgAyU5RJAhO+WHpnRuZpCPPmN5JybsZocK8pHrm+VsPKILVfGSKaRQfbFY5fx1fvegb2NUslAka6ni6pqFT03ulSlCSXJe2bvNC8BLGEhxAEhwvF8FNrzXwV3HdmnU7dVFoOdmsf0bwVElmabkYNXOifpBY0vuH/eFdw775rxr42tZ0eilkZzRnXeiBYawuNKXjKFg50mPGcfTaYeGc88yweIZ/9bCIHP0M/+vfHx0ZLUXSZjnBvuLDMG6VySlBXNdXm1XkzO2rsUrzvtq8QVt9dNJyJ+M+5JgaCf98oiwHypiJWeTRqYkSrUX7gtC9fk7azw0toOnDju3+Ag==&lt;/diagram&gt;&lt;/mxfile&gt;" style="background-color: rgb(255, 255, 255);">
+    <defs/>
+    <g>
+        <path d="M 150 250 L 150 280 L 150 323.63" fill="none" stroke="#000000" stroke-miterlimit="10" pointer-events="stroke"/>
+        <path d="M 150 328.88 L 146.5 321.88 L 150 323.63 L 153.5 321.88 Z" fill="#000000" stroke="#000000" stroke-miterlimit="10" pointer-events="all"/>
+        <path d="M 90 353 L 90 330 L 290 330 L 290 353" fill="#ffffff" stroke="#000000" stroke-miterlimit="10" pointer-events="all"/>
+        <path d="M 90 353 L 90 530 L 290 530 L 290 353" fill="none" stroke="#000000" stroke-miterlimit="10" pointer-events="none"/>
+        <path d="M 90 353 L 290 353" fill="none" stroke="#000000" stroke-miterlimit="10" pointer-events="none"/>
+        <g fill="#000000" font-family="Helvetica" font-weight="bold" pointer-events="none" text-anchor="middle" font-size="12px">
+            <text x="189.5" y="346">
+                Backend
+            </text>
+        </g>
+        <path d="M 90 73 L 90 50 L 290 50 L 290 73" fill="#ffffff" stroke="#000000" stroke-miterlimit="10" pointer-events="none"/>
+        <path d="M 90 73 L 90 250 L 290 250 L 290 73" fill="none" stroke="#000000" stroke-miterlimit="10" pointer-events="none"/>
+        <path d="M 90 73 L 290 73" fill="none" stroke="#000000" stroke-miterlimit="10" pointer-events="none"/>
+        <g fill="#000000" font-family="Helvetica" font-weight="bold" pointer-events="none" text-anchor="middle" font-size="12px">
+            <text x="189.5" y="66">
+                Frontend
+            </text>
+        </g>
+        <path d="M 220 330 L 220 280 L 220 256.37" fill="none" stroke="#000000" stroke-miterlimit="10" pointer-events="none"/>
+        <path d="M 220 251.12 L 223.5 258.12 L 220 256.37 L 216.5 258.12 Z" fill="#000000" stroke="#000000" stroke-miterlimit="10" pointer-events="none"/>
+        <rect x="130" y="270" width="110" height="40" fill="#ffffff" stroke="#000000" pointer-events="none"/>
+        <g transform="translate(-0.5 -0.5)">
+            <switch>
+                <foreignObject style="overflow: visible; text-align: left;" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+                    <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 108px; height: 1px; padding-top: 290px; margin-left: 131px;">
+                        <div style="box-sizing: border-box; font-size: 0; text-align: center; ">
+                            <div style="display: inline-block; font-size: 12px; font-family: Helvetica; color: #000000; line-height: 1.2; pointer-events: none; white-space: normal; word-wrap: normal; ">
+                                GraphQL
+                            </div>
+                        </div>
+                    </div>
+                </foreignObject>
+                <text x="185" y="294" fill="#000000" font-family="Helvetica" font-size="12px" text-anchor="middle">
+                    GraphQL
+                </text>
+            </switch>
+        </g>
+        <path d="M 0 23 L 0 0 L 600 0 L 600 23" fill="#ffffff" stroke="#000000" stroke-miterlimit="10" pointer-events="none"/>
+        <path d="M 0 23 L 0 610 L 600 610 L 600 23" fill="none" stroke="#000000" stroke-miterlimit="10" pointer-events="none"/>
+        <path d="M 0 23 L 600 23" fill="none" stroke="#000000" stroke-miterlimit="10" pointer-events="none"/>
+        <g fill="#000000" font-family="Helvetica" font-weight="bold" pointer-events="none" text-anchor="middle" font-size="12px">
+            <text x="299.5" y="16">
+                Architecture
+            </text>
+        </g>
+    </g>
+    <switch>
+        <g requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"/>
+        <a transform="translate(0,-5)" xlink:href="https://www.diagrams.net/doc/faq/svg-export-text-problems" target="_blank">
+            <text text-anchor="middle" font-size="10px" x="50%" y="100%">
+                Viewer does not support full SVG 1.1
+            </text>
+        </a>
+    </switch>
+</svg>
