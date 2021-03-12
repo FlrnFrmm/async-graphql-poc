@@ -1,12 +1,8 @@
 #![feature(decl_macro, proc_macro_hygiene)]
 
 mod models;
-mod schemas;
+mod schema;
 mod database;
-
-// use models::human;
-// use schemas::humans::{HumanSchema, Query, Mutation};
-
 
 use rocket::{response::content, State};
 
@@ -42,14 +38,6 @@ fn post_graphql_handler(
 
 
 fn main() {
-    // let hs = HumanSchema::new(Query, Mutation, juniper::EmptySubscription::new());
-
-    // let context = schemas::humans::Context::new(database::DatabasePool{});
-
-    // let (result, error) = juniper::execute_sync("query { apiVersion }", None, &hs, &juniper::Variables::new(), &context).unwrap();
-
-    // println!("{:?}", result);
-
     rocket::ignite()
         .manage(Database::new())
         .manage(Schema::new(

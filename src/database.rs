@@ -1,5 +1,5 @@
 use juniper::FieldResult;
-use crate::schemas::humans::NewHuman;
+use crate::schema::humans::NewHuman;
 use crate::models::human::Human;
 
 pub struct DatabasePool;
