@@ -14,8 +14,8 @@ pub struct Context {
 }
 
 impl Context {
-    pub fn new(pool: DatabasePool) -> Self {
-        Self { pool }
+    pub fn new() -> Self {
+        Self { pool: DatabasePool{} }
     }
 }
 
@@ -23,3 +23,7 @@ impl Context {
 impl juniper::Context for Context { }
 
 pub type Schema = juniper::RootNode<'static, Query, Mutation, EmptySubscription<Context>>;
+
+pub fn new() -> Schema {
+    Schema::new(Query, Mutation, EmptySubscription::new())
+}

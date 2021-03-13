@@ -1,54 +1,18 @@
-#![feature(decl_macro, proc_macro_hygiene)]
-
 mod models;
 mod schema;
 mod database;
+mod routes;
 
-use rocket::{response::content, State};
+use actix_web::{App, HttpServer};
 
-use juniper::{
-    tests::fixtures::starwars::schema::{Database, Query},
-    EmptyMutation, EmptySubscription, RootNode,
-};
-
-type Schema = RootNode<'static, Query, EmptyMutation<Database>, EmptySubscription<Database>>;
-
-#[rocket::get("/")]
-fn graphiql() -> content::Html<String> {
-    juniper_rocket::graphiql_source("/graphql", None)
+#[actix_web::main]
+async fn main() -> std::io::Result<()> {
+    HttpServer::new(|| 
+        App::new()
+            .data(schema::new())
+            .service(routes::graphiql)
+            .service(routes::graphql))
+        .bind("127.0.0.1:8080")?
+        .run()
+        .await
 }
-
-#[rocket::get("/graphql?<request>")]
-fn get_graphql_handler(
-    context: State<Database>,
-    request: juniper_rocket::GraphQLRequest,
-    schema: State<Schema>,
-) -> juniper_rocket::GraphQLResponse {
-    request.execute_sync(&schema, &context)
-}
-
-#[rocket::post("/graphql", data = "<request>")]
-fn post_graphql_handler(
-    context: State<Database>,
-    request: juniper_rocket::GraphQLRequest,
-    schema: State<Schema>,
-) -> juniper_rocket::GraphQLResponse {
-    request.execute_sync(&schema, &context)
-}
-
-
-fn main() {
-    rocket::ignite()
-        .manage(Database::new())
-        .manage(Schema::new(
-            Query,
-            EmptyMutation::<Database>::new(),
-            EmptySubscription::<Database>::new(),
-        ))
-        .mount(
-            "/",
-            rocket::routes![graphiql, get_graphql_handler, post_graphql_handler],
-        )
-        .launch();
-}
-
