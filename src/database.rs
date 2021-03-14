@@ -3,15 +3,18 @@ mod user;
 
 use crate::models::user::User;
 
-pub struct DatabasePool {
-    users: Vec<User>
+pub struct DatabaseContext {
+    
 }
 
-impl DatabasePool {
-    pub fn new() -> DatabasePool {
-        Self { users: Vec::new() }
+impl DatabaseContext {
+    pub fn new() -> DatabaseContext {
+        Self { }
     }
 }
 
 impl DatabasePool {
+    fn init(&self) {
+
+    }
 }

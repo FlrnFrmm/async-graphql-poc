@@ -1,13 +1,10 @@
 [package]
-name = "nft-backend"
+name = "backend"
 version = "0.1.0"
 authors = ["Florian Fromm <flrn.frmm@gmail.com>"]
 edition = "2018"
 
 [dependencies]
-actix-web = { version = "3.3.2" }
+actix-web = { version = "3.3.2", features = [ "rustls" ] }
 async-graphql = { version = "2.5.13" }
 async-graphql-actix-web = { version = "2.5.13" }
-reqwest = { version = "0.11.2" }
-
-
