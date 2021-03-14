@@ -1,13 +1,13 @@
-use juniper::{GraphQLEnum, GraphQLObject};
-#[derive(GraphQLObject)]
-#[graphql(description = "A humanoid creature in the Star Wars universe")]
+use async_graphql::{SimpleObject, Enum};
+
+#[derive(SimpleObject)]
 pub struct Human {
     id: String,
     name: String,
     appears_in: Vec<Episode>,
     home_planet: String,
 }
-#[derive(GraphQLEnum)]
+#[derive(Enum, Copy, Clone, Eq, PartialEq)]
 pub enum Episode {
     NewHope,
     Empire,

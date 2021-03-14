@@ -1,11 +1,17 @@
-use juniper::FieldResult;
-use crate::schema::humans::NewHuman;
-use crate::models::human::Human;
+mod human;
+mod user;
 
-pub struct DatabasePool;
+use crate::models::user::User;
+
+pub struct DatabasePool {
+    users: Vec<User>
+}
 
 impl DatabasePool {
-    pub fn get_connection(&self) -> FieldResult<DatabasePool> { Ok(DatabasePool) }
-    pub fn find_human(&self, _id: &str) -> FieldResult<Human> { Err("")? }
-    pub fn insert_human(&self, _human: &NewHuman) -> FieldResult<Human> { Err("")? }
+    pub fn new() -> DatabasePool {
+        Self { users: Vec::new() }
+    }
+}
+
+impl DatabasePool {
 }

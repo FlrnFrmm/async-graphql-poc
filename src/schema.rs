@@ -1,29 +1,17 @@
 pub mod humans;
+pub mod users;
 
-use juniper::EmptySubscription;
+use std::default::Default;
+use async_graphql::{MergedObject, EmptySubscription};
 
-use crate::database::DatabasePool;
+#[derive(MergedObject, Default)]
+pub struct Query(humans::HumanQuery, users::UserQuery);
 
-pub struct Query;
+#[derive(MergedObject, Default)]
+pub struct Mutation(humans::HumanMutation, users::UserMutation);
 
-pub struct Mutation;
-
-pub struct Context {
-    // Use your real database pool here.
-    pool: DatabasePool,
-}
-
-impl Context {
-    pub fn new() -> Self {
-        Self { pool: DatabasePool{} }
-    }
-}
-
-// To make our context usable by Juniper, we have to implement a marker trait.
-impl juniper::Context for Context { }
-
-pub type Schema = juniper::RootNode<'static, Query, Mutation, EmptySubscription<Context>>;
+pub type Schema = async_graphql::Schema<Query, Mutation, EmptySubscription>;
 
 pub fn new() -> Schema {
-    Schema::new(Query, Mutation, EmptySubscription::new())
+    async_graphql::Schema::new(Query::default(), Mutation::default(), EmptySubscription)
 }
