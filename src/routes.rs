@@ -1,16 +1,21 @@
-use actix_web::{get, route, web, Error, HttpResponse};
-use juniper_actix::{graphiql_handler, graphql_handler};
+use actix_web::{get, route, web::{Data, Json}, Error, HttpResponse};
+use async_graphql::http::{playground_source, GraphQLPlaygroundConfig};
+use async_graphql_actix_web::{Request, Response};
 
-use crate::schema::{Schema, Context};
+
+use crate::schema::Schema;
 
 #[get("/")]
 pub async fn graphiql() -> Result<HttpResponse, Error> {
-    graphiql_handler("/graphql", None).await
+    Ok(HttpResponse::Ok()
+        .content_type("text/html; charset=utf-8")
+        .body(playground_source(
+            GraphQLPlaygroundConfig::new("/graphql")
+                .subscription_endpoint("/graphql")
+    )))
 }
 
 #[route("/graphql", method = "GET", method = "POST")]
-pub async fn graphql(req: actix_web::HttpRequest, payload: actix_web::web::Payload, schema: web::Data<Schema>) -> Result<HttpResponse, Error> {
-    let context = Context::new();
-    println!("I'm here for a {}", req.method());
-    graphql_handler(&schema, &context, req, payload).await
+pub async fn graphql(schema: Data<Schema>, request: Request) -> Response {
+    schema.execute(request.into_inner()).await.into()
 }
