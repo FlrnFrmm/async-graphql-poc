@@ -8,3 +8,5 @@ edition = "2018"
 actix-web = { version = "3.3.2", features = [ "rustls" ] }
 async-graphql = { version = "2.5.13" }
 async-graphql-actix-web = { version = "2.5.13" }
+sqlx = { version = "0.4.1", features = [ "postgres", "runtime-actix-rustls"] }
+anyhow = { version = "1.0.38" }

@@ -1,7 +1,6 @@
-use actix_web::{get, route, web::{Data, Json}, Error, HttpResponse};
+use actix_web::{get, route, web::Data, Error, HttpResponse};
 use async_graphql::http::{playground_source, GraphQLPlaygroundConfig};
 use async_graphql_actix_web::{Request, Response};
-
 
 use crate::schema::Schema;
 
